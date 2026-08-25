@@ -333,7 +333,9 @@ alt="WELLWEIGHT coach fitness image">
 <form id="joinForm" onsubmit="submitJoin(event)">
 <div class="form-group"><label for="plan">PLAN</label><input id="plan" name="plan" readonly></div>
 <div class="form-group"><label for="name">YOUR NAME</label><input id="name" name="name" required placeholder="Full name"></div>
-<div class="form-group"><label for="contact">EMAIL OR PHONE</label><input id="contact" name="contact" required placeholder="Email or WhatsApp number"></div>
+<input type="email" id="email" name="email" required placeholder="Email address">
+ <input type="email" id="email" name="email" required placeholder="Email address">
+  <div class="form-group"><label for="contact">EMAIL OR PHONE</label><input id="contact" name="contact" required placeholder="Email or WhatsApp number"></div>
 <button class="btn" type="submit" style="width:100%">PREPARE SIGNUP MESSAGE</button>
 <div class="success" id="success"></div>
 </form>
@@ -355,7 +357,7 @@ function closeJoin(){
 document.getElementById('joinModal').classList.remove('show');
 document.body.classList.remove('modal-open');
 }
-function submitJoin(e){
+async function submitJoin(e){
 e.preventDefault();
 const name=document.getElementById('name').value.trim();
 const contact=document.getElementById('contact').value.trim();
